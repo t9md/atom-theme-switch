@@ -2,6 +2,8 @@
 
 Switch theme(ui and syntax) quickly.
 
+![gif](https://raw.githubusercontent.com/t9md/t9md/2391f495870160c16ee560e0ee5dc913f0df74d4/img/atom-theme-switch.gif)
+
 # Configuration
 
 Configure profile set directly in your `config.cson` or via setting UI.
