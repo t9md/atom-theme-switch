@@ -5,6 +5,14 @@ module.exports = ThemeSwitch =
   config:
     profiles:
       type: 'array'
+      default: [
+        "atom-dark-ui atom-dark-syntax"
+        "atom-light-ui atom-light-syntax"
+        "one-dark-ui one-dark-syntax"
+        "one-light-ui one-light-syntax"
+      ]
+      items:
+        type: 'string'
 
   activate: (state) ->
     @subscriptions = new CompositeDisposable
@@ -15,7 +23,7 @@ module.exports = ThemeSwitch =
     @subscriptions.dispose()
 
   profileFor: (direction) ->
-    profiles = atom.config.get "theme-switch.profiles"
+    profiles = (prof.split(/\s+/) for prof in atom.config.get("theme-switch.profiles"))
     current  = atom.config.get "core.themes"
 
     i = _i for theme, _i in profiles when "#{theme}" is "#{current}"
