@@ -6,11 +6,10 @@ Switch theme(ui and syntax) quickly.
 
 # Configuration
 
-Configure profile set directly in your `config.cson` or via setting UI.
+Configure profile set directly in your `config.cson` or via setting UI.  
 Each profile is space sepalated pair of ui-theme and syntax-theme.
 
-## example
-
+e.g.
 ```coffeescript
 "*":
   "theme-switch":
@@ -21,6 +20,8 @@ Each profile is space sepalated pair of ui-theme and syntax-theme.
     ]
 ```
 
-## How to use
+# How to use
 
-From command palette, incoke `theme-switch:next` or `theme-switch:prev`.
+From command palette, invoke
+* `Theme Swtich: Next`
+* `Theme Swtich: Prev`
