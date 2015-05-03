@@ -2,7 +2,7 @@
   "name": "theme-switch",
   "main": "./lib/theme-switch",
   "version": "0.3.1",
-  "description": "Stich theme quckly",
+  "description": "Switch theme quckly",
   "activationCommands": {
     "atom-workspace": [
       "theme-switch:next",
