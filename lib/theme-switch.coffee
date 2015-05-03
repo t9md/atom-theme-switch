@@ -1,6 +1,6 @@
 {CompositeDisposable} = require 'atom'
 
-module.exports = ThemeSwitcher =
+module.exports = ThemeSwitch =
   subscriptions: null
   config:
     profiles:
@@ -8,14 +8,14 @@ module.exports = ThemeSwitcher =
 
   activate: (state) ->
     @subscriptions = new CompositeDisposable
-    @subscriptions.add atom.commands.add 'atom-workspace', 'theme-switcher:next': => @next()
-    @subscriptions.add atom.commands.add 'atom-workspace', 'theme-switcher:prev': => @prev()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'theme-switch:next': => @next()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'theme-switch:prev': => @prev()
 
   deactivate: ->
     @subscriptions.dispose()
 
   profileFor: (direction) ->
-    profiles = atom.config.get "theme-switcher.profiles"
+    profiles = atom.config.get "theme-switch.profiles"
     current  = atom.config.get "core.themes"
 
     i = _i for theme, _i in profiles when "#{theme}" is "#{current}"

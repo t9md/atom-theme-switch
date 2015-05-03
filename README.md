@@ -1,4 +1,4 @@
-# theme-switcher package
+# theme-switch
 
 Switch theme(ui and syntax) quickly from command palette.
 
@@ -10,7 +10,7 @@ Profile set is Array of Array("ui-theme" and "syntax-theme" pair).
 
 ```coffeescript
 "*":
-  "theme-switcher":
+  "theme-switch":
     profiles: [
       [
         "atom-dark-ui"
