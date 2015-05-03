@@ -1,0 +1,19 @@
+{
+  "name": "theme-switcher",
+  "main": "./lib/theme-switcher",
+  "version": "0.0.0",
+  "description": "Stich theme quckly",
+  "activationCommands": {
+    "atom-workspace": [
+      "theme-switcher:next",
+      "theme-switcher:prev"
+    ]
+  },
+  "repository": "https://github.com/t9md/atom-theme-switcher",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
