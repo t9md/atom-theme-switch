@@ -1,12 +1,16 @@
 {
   "name": "theme-switch",
-  "main": "./lib/theme-switch",
+  "main": "./lib/main",
   "version": "0.3.3",
   "description": "Switch theme quckly",
   "activationCommands": {
     "atom-workspace": [
       "theme-switch:next",
-      "theme-switch:prev"
+      "theme-switch:prev",
+      "theme-switch:next-dark",
+      "theme-switch:prev-dark",
+      "theme-switch:next-light",
+      "theme-switch:prev-light"
     ]
   },
   "repository": "https://github.com/t9md/atom-theme-switch",

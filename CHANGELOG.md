@@ -1,3 +1,8 @@
+## 0.3.4 - Improve
+* Add dark and ligth theme profile to be able to choose only dark or light theme set.
+* Rename filename.
+* Refactoriing
+
 ## 0.3.3 - Update doc.
 ## 0.3.2 - Fix type in package.json
 ## 0.3.1 - Add gif in README.md
