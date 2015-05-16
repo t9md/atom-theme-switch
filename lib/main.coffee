@@ -58,16 +58,16 @@ module.exports =
     profiles = (prof.split(/\s+/) for prof in @getProfiles(luminous))
     current  = atom.config.get "core.themes"
 
-    i = _i for profile, _i in profiles when "#{profile}" is "#{current}"
-    return profiles[0] unless i?
+    index = i for profile, i in profiles when "#{profile}" is "#{current}"
+    return profiles[0] unless index?
 
-    i =
+    index =
       if direction is 'next'
-        (i + 1) % profiles.length
+        (index + 1) % profiles.length
       else
-        (if i == 0 then profiles.length - 1 else i - 1)
+        if index == 0 then profiles.length - 1 else index - 1
 
-    profiles[i]
+    profiles[index]
 
   switch: (direction, luminous) ->
     atom.config.set "core.themes", @profileFor(direction, luminous)

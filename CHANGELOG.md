@@ -1,3 +1,6 @@
+## 0.3.5 - Improve
+* Cleanup
+
 ## 0.3.4 - Improve
 * Add dark and ligth theme profile to be able to choose only dark or light theme set.
 * Rename filename.
