@@ -1,37 +1,42 @@
 {CompositeDisposable} = require 'atom'
 
+Config =
+  profiles:
+    order: 1
+    description: 'collection of ui and syntax pair used for `theme-switch:next`, `theme-switch:prev`'
+    type: 'array'
+    items:
+      type: 'string'
+    default: [
+      "atom-dark-ui atom-dark-syntax"
+      "one-dark-ui one-dark-syntax"
+      "atom-light-ui atom-light-syntax"
+      "one-light-ui one-light-syntax"
+    ]
+  darkProfiles:
+    order: 2
+    description: '`theme-switch:next-dark`, `theme-switch:prev-dark`'
+    type: 'array'
+    items:
+      type: 'string'
+    default: [
+      "atom-dark-ui atom-dark-syntax"
+      "one-dark-ui one-dark-syntax"
+    ]
+  lightProfiles:
+    order: 3
+    description: '`theme-switch:next-light`, `theme-switch:prev-light`'
+    type: 'array'
+    items:
+      type: 'string'
+    default: [
+      "atom-light-ui atom-light-syntax"
+      "one-light-ui one-light-syntax"
+    ]
+
 module.exports =
   subscriptions: null
-  config:
-    profiles:
-      description: 'collection of ui and syntax pair used for `theme-switch:next`, `theme-switch:prev`'
-      type: 'array'
-      items:
-        type: 'string'
-      default: [
-        "atom-dark-ui atom-dark-syntax"
-        "one-dark-ui one-dark-syntax"
-        "atom-light-ui atom-light-syntax"
-        "one-light-ui one-light-syntax"
-      ]
-    darkProfiles:
-      description: '`theme-switch:next-dark`, `theme-switch:prev-dark`'
-      type: 'array'
-      items:
-        type: 'string'
-      default: [
-        "atom-dark-ui atom-dark-syntax"
-        "one-dark-ui one-dark-syntax"
-      ]
-    lightProfiles:
-      description: '`theme-switch:next-light`, `theme-switch:prev-light`'
-      type: 'array'
-      items:
-        type: 'string'
-      default: [
-        "atom-light-ui atom-light-syntax"
-        "one-light-ui one-light-syntax"
-      ]
+  config: Config
 
   activate: (state) ->
     @subscriptions = new CompositeDisposable

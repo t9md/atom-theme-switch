@@ -1,4 +1,5 @@
 ## 0.3.5 - Improve
+* Config option ordered
 * Cleanup
 
 ## 0.3.4 - Improve
