@@ -20,13 +20,20 @@ Each profile is space sepalated pair of ui-theme and syntax-theme.
 e.g.
 
 ```coffeescript
-"*":
-  "theme-switch":
-    profiles: [
-      "atom-dark-ui spacegray-dark-syntax"
-      "atom-dark-ui atom-dark-syntax"
-      "atom-light-ui atom-light-syntax"
-    ]
+"theme-switch":
+  profiles: [
+    "atom-dark-ui spacegray-dark-syntax"
+    "atom-dark-ui atom-dark-syntax"
+    "atom-light-ui atom-light-syntax"
+  ],
+  darkProfiles: [
+    "atom-dark-ui atom-dark-syntax"
+    "one-dark-ui one-dark-syntax"
+  ],
+  lightProfiles: [
+    "atom-light-ui atom-light-syntax"
+    "one-light-ui one-light-syntax"
+  ]
 ```
 
 # How to use
