@@ -3,7 +3,7 @@
 Config =
   profiles:
     order: 1
-    description: 'collection of ui and syntax pair used for `theme-switch:next`, `theme-switch:prev`'
+    description: 'list of "ui and syntax pair" used for `theme-switch:next`, `theme-switch:prev`'
     type: 'array'
     items:
       type: 'string'
@@ -15,7 +15,7 @@ Config =
     ]
   darkProfiles:
     order: 2
-    description: '`theme-switch:next-dark`, `theme-switch:prev-dark`'
+    description: 'used for `theme-switch:next-dark`, `theme-switch:prev-dark`'
     type: 'array'
     items:
       type: 'string'
@@ -25,7 +25,7 @@ Config =
     ]
   lightProfiles:
     order: 3
-    description: '`theme-switch:next-light`, `theme-switch:prev-light`'
+    description: 'used for `theme-switch:next-light`, `theme-switch:prev-light`'
     type: 'array'
     items:
       type: 'string'
@@ -41,38 +41,32 @@ module.exports =
   activate: (state) ->
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.commands.add 'atom-workspace',
-      'theme-switch:next':       => @switch('next')
-      'theme-switch:prev':       => @switch('prev')
-      'theme-switch:next-dark':  => @switch('next', 'dark')
-      'theme-switch:prev-dark':  => @switch('prev', 'dark')
+      'theme-switch:next': => @switch('next')
+      'theme-switch:prev': => @switch('prev')
+      'theme-switch:next-dark':=> @switch('next', 'dark')
+      'theme-switch:prev-dark':=> @switch('prev', 'dark')
       'theme-switch:next-light': => @switch('next', 'light')
       'theme-switch:prev-light': => @switch('prev', 'light')
 
   deactivate: ->
     @subscriptions.dispose()
 
-  getProfiles: (luminous)->
-    profiles =
-      if luminous in ['dark', 'light']
-        "#{luminous}Profiles"
-      else
-        'profiles'
-    atom.config.get("theme-switch.#{profiles}")
+  getProfiles: (luminous="profiles")->
+    luminous += "Profiles" if luminous in ['dark', 'light']
+    atom.config.get("theme-switch.#{luminous}").map (profile) ->
+      profile.split(/\s+/)
 
-  profileFor: (direction, luminous) ->
-    profiles = (prof.split(/\s+/) for prof in @getProfiles(luminous))
-    current  = atom.config.get "core.themes"
+  getThemes: (direction, luminous) ->
+    profiles = @getProfiles(luminous)
+    current = atom.config.get "core.themes"
 
-    index = i for profile, i in profiles when "#{profile}" is "#{current}"
-    return profiles[0] unless index?
+    index = 0
+    for profile, i in profiles when "#{profile}" is "#{current}"
+      index = i + (if direction is 'next' then +1 else -1)
 
-    index =
-      if direction is 'next'
-        (index + 1) % profiles.length
-      else
-        if index == 0 then profiles.length - 1 else index - 1
-
+    index = index % profiles.length
+    index = profiles.length + index if index < 0
     profiles[index]
 
   switch: (direction, luminous) ->
-    atom.config.set "core.themes", @profileFor(direction, luminous)
+    atom.config.set "core.themes", @getThemes(direction, luminous)
