@@ -1,21 +1,19 @@
 # theme-switch
 
-Switch theme(ui and syntax) quickly.
+Switch theme(ui and syntax).
 
 ![gif](https://raw.githubusercontent.com/t9md/t9md/2391f495870160c16ee560e0ee5dc913f0df74d4/img/atom-theme-switch.gif)
 
 # Features
 
-* You can switch forward/backward within defined theme set with `next` and `prev`
-* Easy to configure from settin UI.
-* Support as many theme set as you like.
-* Respect current theme set(means `next`, `prev` start from current theme set index).
+* Switch to next/previous theme within defined theme set with `next` and `prev`
 * You can use three theme sets(All, Dark, Light) from which you switch to `next` / `prev` theme.
 
 # Configuration
 
-Configure profile set directly in your `config.cson` or via setting UI.  
-Each profile is space sepalated pair of ui-theme and syntax-theme.
+Configure theme set(= profile) directly in your `config.cson` or via setting UI.  
+If you are not sure for exact name of ui and syntax name.
+Check `atom.config.get('core.theme')` in Chrome DevTools.
 
 e.g.
 

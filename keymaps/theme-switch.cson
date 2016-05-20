@@ -1,4 +1,0 @@
-# I won't provide default keymap for this kind of not-frequently-used feature.
-# I don't want to join keymap monopoly game!
-# 'atom-workspace':
-#   'ctrl-alt-o': 'theme-switch:next'
