@@ -6,12 +6,31 @@ Switch theme(ui and syntax).
 
 # Features
 
-* Switch to next/previous theme within defined theme set with `next` and `prev`
-* You can use three theme sets(All, Dark, Light) from which you switch to `next` / `prev` theme.
+* Switch to next or previous theme within defined set of ui and syntax pair.
+* Provide three kind of theme set store(All, Dark, Light).
+
+# Commands
+
+Use following command to change theme.
+
+* `theme-switch-next`: Change to next theme in `profiles`
+* `theme-switch-prev`: Change to previous theme in `profiles`
+* `theme-switch-next-dark`: Change to next theme in `darkProfiles`
+* `theme-switch-prev-dark`: Change to previous theme in `darkProfiles`
+* `theme-switch-next-light`: Change to next theme in `lightProfiles`
+* `theme-switch-prev-light`: Change to previous theme in `lightProfiles`
+
+No keymap by default.  
+Keymap example is here.
+```coffeescript
+'atom-workspace:not([mini])':
+  'cmd-shift-up': 'theme-switch:prev'
+  'cmd-shift-down': 'theme-switch:next'
+```
 
 # Configuration
 
-Configure theme set(= profile) directly in your `config.cson` or via setting UI.  
+Configure theme set(=profile) directly in your `config.cson` or via setting UI.  
 If you are not sure for exact name of ui and syntax name.
 Check `atom.config.get('core.theme')` in Chrome DevTools.
 
@@ -33,16 +52,3 @@ e.g.
     "one-light-ui one-light-syntax"
   ]
 ```
-
-# How to use
-
-From command palette, invoke
-* `Theme Swtich: Next`
-* `Theme Swtich: Prev`
-
-You can use light or dark only version of command by setting `darkProfiles` and `lightProfiles`.
-
-* `Theme Swtich: Next Dark`
-* `Theme Swtich: Prev Dark`
-* `Theme Swtich: Next Light`
-* `Theme Swtich: Prev Light`
