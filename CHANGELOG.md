@@ -1,3 +1,6 @@
+## 0.4.0
+* Cleanup
+
 ## 0.3.6 - Fix
 * Couldn't change theme when you use `theme-switch:next` and `prev`. Theme index was not correctly incremented.
 
