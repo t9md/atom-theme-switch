@@ -1,7 +1,7 @@
 {
   "name": "theme-switch",
   "main": "./lib/main",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Switch theme quckly",
   "activationCommands": {
     "atom-workspace": [
@@ -36,7 +36,10 @@
       "items": {
         "type": "string"
       },
-      "default": ["atom-dark-ui atom-dark-syntax", "one-dark-ui one-dark-syntax"]
+      "default": [
+        "atom-dark-ui atom-dark-syntax",
+        "one-dark-ui one-dark-syntax"
+      ]
     },
     "lightProfiles": {
       "order": 3,
@@ -45,7 +48,10 @@
       "items": {
         "type": "string"
       },
-      "default": ["atom-light-ui atom-light-syntax", "one-light-ui one-light-syntax"]
+      "default": [
+        "atom-light-ui atom-light-syntax",
+        "one-light-ui one-light-syntax"
+      ]
     },
     "logToConsole": {
       "order": 4,
