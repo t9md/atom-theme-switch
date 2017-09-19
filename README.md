@@ -1,24 +1,25 @@
 # theme-switch
 
-Switch theme(ui and syntax).
+Switch theme(ui and syntax pair).
 
 ![gif](https://raw.githubusercontent.com/t9md/t9md/2391f495870160c16ee560e0ee5dc913f0df74d4/img/atom-theme-switch.gif)
 
 # Features
 
-* Switch to next or previous theme within defined set of ui and syntax pair.
-* Provide three kind of theme set store(All, Dark, Light).
+* Switch to next or previous theme from defined set of ui and syntax pair.
+* There are three theme set available(All, Dark, Light), use it whichever you like.
 
 # Commands
 
-Use following command to change theme.
+- `theme-switch-next`: Set next theme in `profiles`
+- `theme-switch-prev`: Set previous theme in `profiles`
+- `theme-switch-next-dark`: Set next theme in `darkProfiles`
+- `theme-switch-prev-dark`: Set previous theme in `darkProfiles`
+- `theme-switch-next-light`: Set next theme in `lightProfiles`
+- `theme-switch-prev-light`: Set previous theme in `lightProfiles`
+- `theme-switch:clip-current-theme`: Save current active theme to clipboard.
 
-* `theme-switch-next`: Change to next theme in `profiles`
-* `theme-switch-prev`: Change to previous theme in `profiles`
-* `theme-switch-next-dark`: Change to next theme in `darkProfiles`
-* `theme-switch-prev-dark`: Change to previous theme in `darkProfiles`
-* `theme-switch-next-light`: Change to next theme in `lightProfiles`
-* `theme-switch-prev-light`: Change to previous theme in `lightProfiles`
+# Keymap
 
 No keymap by default.  
 Keymap example is here.
@@ -30,9 +31,9 @@ Keymap example is here.
 
 # Configuration
 
-Configure theme set(=profile) directly in your `config.cson` or via setting UI.  
-If you are not sure for exact name of ui and syntax name.
-Check `atom.config.get('core.theme')` in Chrome DevTools.
+Set "ui and syntax theme pair" as member of each theme-set.
+In case you are not sure for exact name of ui and syntax theme, use `theme-switch:clip-current-theme` command.
+Technically "ui and syntax theme pair" can be buit by `atom.config.get('core.themes').join(" ")`.
 
 e.g.
 

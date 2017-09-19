@@ -10,8 +10,48 @@
       "theme-switch:next-dark",
       "theme-switch:prev-dark",
       "theme-switch:next-light",
-      "theme-switch:prev-light"
+      "theme-switch:prev-light",
+      "theme-switch:clip-current-theme"
     ]
+  },
+  "configSchema": {
+    "profiles": {
+      "order": 1,
+      "description": "list of 'ui and syntax pair' used for `theme-switch:next`, `theme-switch:prev`",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "atom-dark-ui atom-dark-syntax",
+        "one-dark-ui one-dark-syntax",
+        "atom-light-ui atom-light-syntax",
+        "one-light-ui one-light-syntax"
+      ]
+    },
+    "darkProfiles": {
+      "order": 2,
+      "description": "used for `theme-switch:next-dark`, `theme-switch:prev-dark`",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": ["atom-dark-ui atom-dark-syntax", "one-dark-ui one-dark-syntax"]
+    },
+    "lightProfiles": {
+      "order": 3,
+      "description": "used for `theme-switch:next-light`, `theme-switch:prev-light`",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": ["atom-light-ui atom-light-syntax", "one-light-ui one-light-syntax"]
+    },
+    "logToConsole": {
+      "order": 4,
+      "type": "boolean",
+      "default": false
+    }
   },
   "repository": "https://github.com/t9md/atom-theme-switch",
   "license": "MIT",

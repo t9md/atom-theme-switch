@@ -1,3 +1,9 @@
+## 0.5.0
+- Rewrite to JavaScript
+- Add new `theme-switch:clip-current-theme` commands.
+- Update README.
+- New `logToConsole` config.
+
 ## 0.4.0
 * Cleanup
 
