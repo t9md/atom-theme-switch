@@ -1,3 +1,6 @@
+## 0.5.1
+- Super minor refactoring
+
 ## 0.5.0
 - Rewrite to JavaScript
 - Add new `theme-switch:clip-current-theme` commands.
