@@ -1,3 +1,6 @@
+## 0.6.0
+- New `theme-switch:add-to-profiles` family command which add currently active theme to profile-set.
+
 ## 0.5.1
 - Super minor refactoring
 
