@@ -11,7 +11,10 @@
       "theme-switch:prev-dark",
       "theme-switch:next-light",
       "theme-switch:prev-light",
-      "theme-switch:clip-current-theme"
+      "theme-switch:clip-current-theme",
+      "theme-switch:add-to-profiles",
+      "theme-switch:add-to-dark-profiles",
+      "theme-switch:add-to-light-profiles"
     ]
   },
   "configSchema": {
